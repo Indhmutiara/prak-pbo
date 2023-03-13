@@ -1,0 +1,16 @@
+import os
+class AkunBank:
+    def _init_(self, no_pelanggan, nama_pelanggan, jumlah_saldo):
+        self.nama_pelanggan = nama_pelanggan
+        self.no_pelanggan = no_pelanggan
+        self.__jumlah_saldo = jumlah_saldo 
+
+    def lihat_saldo(self):
+        print(f"saldo anda saat ini adalah : {self.__jumlah_saldo}")
+
+    def tarik_tunai(self, jumlah_uang):
+        if jumlah_uang <= self.__jumlah_saldo:
+            self.__jumlah_saldo -= jumlah_uang
+            print(f"tarik tunai senilai {jumlah_uang} berhasil")
+        else:
+            print(f"saldo tidak mencukupi!")
